@@ -2,7 +2,7 @@
  * @fileoverview Inserts portalglyph buttons into the page and handles all logic surrounding them.
  */
 
-import { errorMessage, triggerEvent, wikiCode } from "../common";
+import { triggerEvent, wikiCode } from "../common";
 import { getDestElements } from "../commonElements/elementBackend/elementStore";
 import { globalElements, pageData } from "../variables/objects";
 
@@ -141,7 +141,11 @@ export function validateGlyphInput(glyphString: string): string {
 export function validateGlyphs(glyphs: string) {
 	// Checks if the input contains exactly 12 glyphs
 	if (glyphs.length !== 12) return '';		// NoSonar 12 is the expected glyph length, because glyph strings are always 12 digits long
+
+	// Returns the glyphs without region information
+	return glyphs.substring(0, 4); // NoSonar this extracts the first 4 glyphs, which do not depend on the region
 }
+
 
 /**
  * Converts a glyph string to coordinates.
