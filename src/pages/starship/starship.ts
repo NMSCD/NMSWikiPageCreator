@@ -3,7 +3,7 @@
  */
 
 import { docByResearchteam, enPrefix, hideInput, setDropdownOptions, triggerEvent, wikiCode } from "../../common";
-import { regNr, planetMoonSentence } from "../../miscLogic/locationLogic";
+import { planetMoonSentence } from "../../miscLogic/locationLogic";
 import type { StdObj } from "../../types/objects";
 import type { Sections, ShipProp } from "../../types/starshipDataObjects";
 import { globalElements, pageData } from "../../variables/objects";
@@ -195,10 +195,11 @@ function shipType() {
  * @return {string} The completed location sentence.
  */
 export function loc() {
-	const { class: shipClass, system: systemName, region: regionName, type } = pageData;
+	const { class: shipClass, system: systemName, region: regionName, type, galaxy } = pageData;
+  const hubname = pageData.hubname as string;
 
 	// this output has a linebreak. This is intended, because we use .innerText to display this. If we used <br>, it would display '<br>', not the linebreak.
-	const output = `This ${shipType()} was discovered in the [[${systemName}]] [[star system]] in the [[${regionName}]] [[region]]${regNr(regionName as string)} of [[Eisvana]], in the [[Eissentam]] [[galaxy]].
+	const output = `This ${shipType()} was discovered in the [[${systemName}]] [[star system]] in the [[${regionName}]] [[region]] of [[${hubname}]], in the [[${galaxy}]] [[galaxy]].
 
 	${type === 'Interceptor' ? 'The {{Class|' + shipClass + '}} class version of this starship' : 'It'} can be found ${locText()}.`;
 

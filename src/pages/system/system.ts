@@ -22,13 +22,14 @@ import type { BiomeLinks, ResourceAndCreatureLinks } from '../../types/links';
  * @function
  */
 export function locationSentence() {
+	const { region, hubname, galaxy } = pageData;
 
 	/**
 	 * The sentence describing the location of the page.
 	 *
 	 * @type {string}
 	 */
-	const output = ``;
+	const output = `Located in the [[${region}]] [[region]] of [[${hubname}]] in the [[${galaxy}]] galaxy.`;
 
 	wikiCode(output, 'loc');
 }

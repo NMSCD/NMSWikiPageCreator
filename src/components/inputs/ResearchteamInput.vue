@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { departments, usePageDataStore } from '../../stores/pageData';
+import { usePageDataStore } from '../../stores/pageData';
 import InputRow from '../structure/InputRow.vue';
 
 const pageData = usePageDataStore();
@@ -14,15 +14,7 @@ const { researchteam } = storeToRefs(pageData);
     </template>
 
     <template #input>
-      <select v-model="researchteam">
-        <option
-          v-for="(name, short) in departments"
-          :value="name"
-          :key="short"
-        >
-          {{ short }}
-        </option>
-      </select>
+      <input type="text" v-model="researchteam">
     </template>
   </InputRow>
 </template>

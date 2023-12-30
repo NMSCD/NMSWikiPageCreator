@@ -8,7 +8,6 @@ import DiscovererInputs from '@/components/inputs/DiscovererInputs.vue';
 import GlyphInput from '@/components/inputs/GlyphInput.vue';
 import DatalistWrapper from '@/components/inputs/DatalistWrapper.vue';
 import ResourceInput from '@/components/inputs/ResourceInput.vue';
-import ResearchteamInput from '@/components/inputs/ResearchteamInput.vue';
 import InputRow from '@/components/structure/InputRow.vue';
 import Subgrid from '@/components/structure/Subgrid.vue';
 import Actions from '@/components/actions/Actions.vue';
@@ -250,7 +249,11 @@ function markCopy() {
           identifier="docBy"
           v-model="docBy"
         />
-        <ResearchteamInput />
+        <SimpleInput
+          label="Researchteam you belong to::"
+          identifier="researchteamInput"
+          v-model="researchteam"
+        />
       </Subgrid>
       <InputRow>
         <label for="appearance">Appearance:</label>

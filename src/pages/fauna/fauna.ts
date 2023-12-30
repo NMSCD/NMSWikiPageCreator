@@ -33,22 +33,7 @@ export function genusDropdown() {
  * @function
  * @returns {void}
  */
-export function albumDropdown() {
-	const ecosystem = pageData.ecosystem as string;
-	const catalogueInput = globalElements.input.catalogueInput as HTMLSelectElement;
 
-	const albums = creatureData.catalogs[ecosystem];
-	const albumValues = [albums[0]];
-	const albumTexts = [albums[0]];
-	// ignore first index (empty option)
-	for (let i = 1; i < albums.length; i++) {
-		const text = `Eisvana ${albums[i]}`;
-		albumValues.push(`${text} Album`);
-		albumTexts.push(text);
-	}
-	setDropdownOptions(catalogueInput, albumValues, albumTexts);
-	storeData(catalogueInput);
-}
 
 /**
  * Generates an additional information sentence based on selected criteria and displays it in a specified HTML element.

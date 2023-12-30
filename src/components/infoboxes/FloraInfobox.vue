@@ -4,9 +4,11 @@ import WikiTemplate from '../structure/WikiTemplate.vue';
 defineProps<{
   plantName?: string;
   region?: string;
+  hubname?: string;
   image?: string;
   systemName?: string;
   planetName?: string;
+  galaxy?: string;
   moonName?: string;
   type?: string;
   biome?: string;
@@ -33,12 +35,12 @@ defineProps<{
   >
     <div>| name = {{ plantName }}</div>
     <div>| image = {{ image || 'nmsMisc_NotAvailable.png' }}</div>
-    <div>| galaxy = Eissentam</div>
+    <div>| galaxy = {{ galaxy }}</div>
     <div>| region = {{ region }}</div>
     <div>| system = {{ systemName }}</div>
     <div>| planet = {{ planetName }}</div>
     <div>| moon = {{ moonName }}</div>
-    <div>| civilized = Eisvana</div>
+    <div>| civilized = {{ hubname }} </div>
     <div>| type = {{ type }}</div>
     <div>| biome = {{ biome }}</div>
     <div>| polymorphic = {{ polymorphic }}</div>

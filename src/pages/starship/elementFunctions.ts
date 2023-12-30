@@ -10,7 +10,7 @@ const starshipElementFunctions: ElementFunctions = [
 		func: () => { appearanceSentence(); albumName(); toggleRedirect() }
 	},
 	{
-		element: 'systemInput',
+		element: ['systemInput', 'hubnameInput', 'galaxyInput', 'regionInput'],
 		func: () => loc()
 	},
 	{

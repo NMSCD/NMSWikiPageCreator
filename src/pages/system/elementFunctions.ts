@@ -1,16 +1,20 @@
 import { image, toggleSection } from "../../common";
 import { wikiCodePercentage, docByExternal } from "../../miscLogic/celestialobjectslogic";
 import type { ElementFunctions } from "../../types/elements";
-import { addTemplate, autoBH, autoPirate, combineEconConf, expectedPrefixSentence, planetInputs, regionLong, searchUpgrades, spaceStationSection, tradeables } from "./system";
+import { addTemplate, autoBH, autoPirate, combineEconConf, expectedPrefixSentence, planetInputs, regionLong, searchUpgrades, spaceStationSection, tradeables, locationSentence } from "./system";
 
 const systemElementFunctions: ElementFunctions = [
 	{
 		element: 'portalglyphsInput',
 		func: () => { regionLong(); expectedPrefixSentence(); autoBH() }
 	},
-	{
+  {
 		element: ['planetInput', 'moonInput'],
 		func: () => planetInputs()
+	},
+	{
+		element: ['hubnameInput', 'galaxyInput', 'regionInput'],
+		func: () => locationSentence()
 	},
 	{
 		element: 'nameInput',

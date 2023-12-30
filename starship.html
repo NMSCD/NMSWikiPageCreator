@@ -4,19 +4,19 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Eisvana Wiki Page Creator - Starship</title>
-	<meta name="application-name" content="Eisvana Wiki Page Creator">
+	<title>Wiki Page Creator - Starship</title>
+	<meta name="application-name" content="Wiki Page Creator">
 	<meta name="description"
-		content="Easily generate the wikicode to create a starship discovery page for Eisvana on the No Man's Sky Wiki!">
+		content="Easily generate the wikicode to create a starship discovery page on the No Man's Sky Wiki!">
 	<meta name="theme-color" content="#280033">
-	<meta name="keywords" content="No Man's Sky, NMS, Wiki, Fandom, Lenni, Eisvana, Page Creator, Starship">
+	<meta name="keywords" content="No Man's Sky, NMS, Wiki, Fandom, Lenni, Page Creator, Starship">
 	<script src="./src/pages/starship" type="module"></script>
 </head>
 
 <body>
 	<div class="container">
 		<nav><a href="./" title="Main page">&larr; Return to main page</a></nav>
-		<h1 class="title is-3">Eisvana Wiki Page Creator - Starship</h1>
+		<h1 class="title is-3">Wiki Page Creator - Starship</h1>
 		<dialog id="explanation" class="modal-content content"></dialog>
 
 		<main class="columns is-desktop">
@@ -79,6 +79,12 @@
 					<div class="table-cell data">
 						<input type="text" data-dest="name" id="nameInput">
 					</div>
+          <div class="table-cell text">
+            <label for="hubnameInput">Claimed by which civilized space:</label>
+          </div>
+          <div class="table-cell data">
+            <input type="text" data-dest="hubname" id="hubnameInput">
+          </div>
 					<div class="table-cell text">
 						<label for="fileInput">Main image name, including file extension:</label>
 						<button class="tooltip" name="fileUploadTooltip">
@@ -121,12 +127,24 @@
 							<option value="Freighter">Freighter</option>
 						</select>
 					</div>
-					<div class="table-cell text">
-						<label for="systemInput">Name of the system:</label>
-					</div>
-					<div class="table-cell data">
-						<input type="text" data-dest="system" id="systemInput">
-					</div>
+          <div class="table-cell text">
+            <label for="galaxyInput">Name of the galaxy:</label>
+          </div>
+          <div class="table-cell data">
+            <input type="text" data-dest="galaxy" id="galaxyInput">
+          </div>
+          <div class="table-cell text">
+            <label for="systemInput">Name of the system:</label>
+          </div>
+          <div class="table-cell data">
+            <input type="text" data-dest="system" id="systemInput">
+          </div>
+          <div class="table-cell text">
+            <label for="regionInput">Name of the region where the system is located:</label>
+          </div>
+          <div class="table-cell data">
+            <input type="text" data-dest="region" id="regionInput">
+          </div>
 					<div class="table-cell text">
 						<label for="planetInput">Name of the planet:</label>
 						<button class="tooltip">
@@ -429,16 +447,13 @@
 					<div class="table-cell data">
 						<input type="text" data-dest-noauto="docby" id="docbyInput">
 					</div>
-					<div class="table-cell text">
-						<label>Do you belong to a chapter?</label>
-					</div>
-					<div class="table-cell data">
-						<select data-dest-noauto="researchteam" id="researchteamInput">
-							<option value=""></option>
-							<option value="Wiki Scholars">Wiki Scholars</option>
-							<option value="EBC">EBC</option>
-						</select>
-					</div>
+          <div class="table-cell text">
+            <label>Researchteam you belong to:</label>
+          </div>
+          <div class="table-cell data">
+            <input type="text" data-dest-noauto="researchteam" id="researchteamInput" placeholder="Your hub may not have this">
+          </input>
+          </div>
 					<div class="tableHeader text sectionToggle">
 						<p>This section builds a predefined appearance sentence, it is not required.</p>
 						<button class="button" id="hideAppearanceButton">Hide</button>
@@ -518,7 +533,6 @@
 				<div id="galleryInput"></div>
 				<div id="galleryItems" class="gallery-items-wrapper"></div>
 				<div id="actions" class="buttons"></div>
-				<div id="albumActions" class="buttons"></div>
 			</div>
 			<div id="output" class="column is-full-mobile">
 				<div class="wikiText" id="fullArticle" data-link="page">
@@ -527,16 +541,15 @@
 					<div>{{Starship infobox</div>
 					<div>| name = <output id="name" name="name"></output></div>
 					<div>| image = <output id="image" name="image"></output></div>
-					<div>| galaxy = Eissentam</div>
-					<div>| region = <output id="region"></output></div>
+					<div>| galaxy = <output id="galaxy" name="galaxy"></output></div>
+					<div>| region = <output id="region" name="region"></output></div>
 					<div>| system = <output id="system"></output></div>
 					<div>| planet = <output id="planet"></output></div>
 					<div>| moon = <output id="moon"></output></div>
 					<div>| axes = <output id="axes" name="axes"></output></div>
 					<div>| economy = <output id="economy"></output></div>
 					<div>| pilot = <output id="pilot"></output></div>
-					<div>| coordinates = {{Glyphs2Coords|<output id="portalglyphs1" name="portalglyphs"></output>}}
-					</div>
+					<div>| coordinates = {{Glyphs2Coords|<output id="portalglyphs1" name="portalglyphs"></output>}}</div>
 					<div>| portalglyphs = <output id="portalglyphs" name="portalglyphs"></output></div>
 					<div>| type = <output id="type" name="type"></output></div>
 					<div>| subtype = <output id="subtype"></output></div>
@@ -548,7 +561,7 @@
 					<div>| cost = <output id="cost"></output></div>
 					<div>| discovered = <output id="discovered"></output></div>
 					<div>| discoveredlink = <output id="discoveredlink"></output></div>
-					<div>| civilized = Eisvana</div>
+					<div>| civilized = <output id="hubname" name="hubname"></output></div>
 					<div>| researchteam = <output id="researchteam"></output></div>
 					<div>| release = <output id="release1" name="release"></output></div>
 					<div>| maneuverB = <output id="maneuverB"></output></div>
@@ -580,7 +593,6 @@
 					<br>
 
 					<div>==Additional Information==</div>
-					<div><span data-add-info="*"></span> Featured in the <output id="addInfo"></output></div>
 					<div><span data-add-info="*"></span> <output id="docby"></output></div>
 					<br>
 
@@ -590,7 +602,6 @@
 					<div>==Reference Links==</div>
 					<div>{{StarshipRefLinks|type=<output name="type" id="refLinks"></output>}}</div>
 				</div>
-				<div id="albumEntry" data-link="album"></div>
 			</div>
 		</main>
 	</div>

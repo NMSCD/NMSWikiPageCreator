@@ -11,7 +11,6 @@ import {
 } from './discoveryMenuDatalists';
 import {
   addInfo,
-  albumDropdown,
   albumTitle,
   bundlePropFunctions,
   genderDropdown,
@@ -58,7 +57,6 @@ const creatureElementFunctions: ElementFunctions = [
     element: 'ecosystemInput',
     func: () => {
       genusDropdown();
-      albumDropdown();
       genusProduces();
     },
   },

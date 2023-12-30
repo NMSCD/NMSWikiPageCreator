@@ -2,16 +2,13 @@
 import { usePageDataStore } from '../../stores/pageData';
 import { storeToRefs } from 'pinia';
 import InputRow from '../structure/InputRow.vue';
-import ErrorMessage from './ErrorMessage.vue';
-import { computed } from 'vue';
 import Explanation from '../structure/Explanation.vue';
-import WikiLink from '../structure/WikiLink.vue';
 
 const validGlyphsRegex = /[0-9A-F]/;
 const maxGlyphLength = 12;
 
 const pageData = usePageDataStore();
-const { glyphs, isValidGlyphs } = storeToRefs(pageData);
+const { glyphs } = storeToRefs(pageData);
 
 function addGlyph(e: Event) {
   if (
@@ -41,7 +38,7 @@ function lintGlyphs() {
 
 const numberToGlyph = (n: number) => n.toString(16).toUpperCase(); // NoSonar this is dec to hex
 
-const isInvalidGlyphs = computed(() => glyphs.value.length === maxGlyphLength && !isValidGlyphs.value);
+
 </script>
 
 <template>
@@ -78,7 +75,6 @@ const isInvalidGlyphs = computed(() => glyphs.value.length === maxGlyphLength &&
 
     <template #input>
       <input
-        :class="{ 'error-input': isInvalidGlyphs }"
         class="glyphs-input"
         id="portalglyphsInput"
         type="text"
@@ -86,17 +82,6 @@ const isInvalidGlyphs = computed(() => glyphs.value.length === maxGlyphLength &&
         v-model="glyphs"
         @input="lintGlyphs"
       />
-
-      <ErrorMessage
-        v-if="isInvalidGlyphs"
-        class="error"
-        >No valid Eisvana region. See
-        <WikiLink
-          link="Eisvana#Claimed_Regions"
-          text="Eisvana Claimed Regions"
-        />
-        for a list of valid regions.</ErrorMessage
-      >
     </template>
   </InputRow>
   <InputRow>

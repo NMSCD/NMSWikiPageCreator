@@ -558,7 +558,7 @@ export function displayResearch() {
   const chapter = pageData.researchteam as string;
   if (!chapter) return chapter;
 
-  const chapterSentence = `${chapter} member`
+  const chapterSentence = `[[${chapter}]] member`
   return chapterSentence;
 }
 

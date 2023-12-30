@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia';
 import { versions } from '../variables/versions';
-import { regions } from '../variables/regions';
 import { sanitiseString } from '@/common';
 
 interface StaticPageData {
@@ -11,15 +10,6 @@ interface StaticPageData {
 
 const route = window.location.pathname.split('/')!.at(-1)!.slice(0, -5); // NoSonar getting the current filename without the "html" ending
 
-const researchteamDefaultExceptions = ['base'];
-
-export const departments = {
-  '': 'Eisvana',
-  'Wiki Scholars': 'Eisvana Wiki Scholars',
-  EBC: 'Eisvana Builder Collective',
-};
-
-if (researchteamDefaultExceptions.includes(route)) departments[''] = '';
 
 export const useStaticPageDataStore = defineStore('staticPageData', {
   state: (): StaticPageData => ({
@@ -35,8 +25,11 @@ interface PageData {
   release: string;
   name: string;
   image: string;
+  hubname: string;
   discovered: string;
+  galaxy: string;
   discoveredlink: string;
+  region: string;
   orgName: string;
   system: string;
   planet: string;
@@ -66,6 +59,9 @@ export const usePageDataStore = defineStore('pageData', {
     release: versions[0],
     name: '',
     image: '',
+    region: localStorageData().regionInput ?? '',
+    galaxy: localStorageData().galaxyInput ?? '',
+    hubname: localStorageData().hubnameInput ?? '',
     discovered: localStorageData()['discoveredInput builderInput'] ?? '',
     discoveredlink: localStorageData()['discoveredlinkInput builderlinkInput'] ?? '',
     orgName: '',
@@ -83,7 +79,7 @@ export const usePageDataStore = defineStore('pageData', {
     polymorphic: '',
     discDate: '',
     docBy: localStorageData().docbyInput ?? '',
-    researchteam: '',
+    researchteam: localStorageData().researchteamInput ?? '',
     appearance: '',
     pageName: '',
     platform: localStorageData().platformInput ?? '',
@@ -93,17 +89,6 @@ export const usePageDataStore = defineStore('pageData', {
   }),
 
   getters: {
-    regionGlyphs: (state) => state.glyphs.substring(4), // NoSonar region glyphs start at index 4
-    isValidGlyphs(): boolean {
-      return Object.keys(regions).includes(this.regionGlyphs); // Tests if an address is valid for Eisvana
-    },
-    region(): string {
-      return regions[this.regionGlyphs] ?? '';
-    },
-    regionNumber(): number {
-      const index = Object.keys(regions).indexOf(this.regionGlyphs);
-      return index + 1;
-    },
     sanitisedStrings: (state) => ({
       name: sanitiseString(state.name),
       discovered: sanitiseString(state.discovered),
@@ -116,7 +101,7 @@ export const usePageDataStore = defineStore('pageData', {
     }),
     docBySentence: (state) => {
       const isLink = state.docBy.startsWith('{{');
-      const hasResearchteam = state.researchteam.split(' ').length > 1;
+      const hasResearchteam = state.researchteam.trim().length > 0;
       const documenter = isLink ? state.docBy : `''${state.docBy}''`;
       const researchteamLink = state.researchteam.includes('Wiki')
         ? ''
