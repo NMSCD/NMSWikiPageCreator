@@ -22,8 +22,7 @@ export function addInfo() {
 	const researchteam = docByResearchteam();
 	const outputElement = globalElements.output.addInfo as HTMLOutputElement;
 
-	const catalogue = albumLinkGen();
-	const output = '[[' + catalogue + ']]' + researchteam;
+	const output = researchteam;
 
 	outputElement.innerText = output;
 }

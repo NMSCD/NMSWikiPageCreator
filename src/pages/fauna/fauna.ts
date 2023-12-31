@@ -29,13 +29,6 @@ export function genusDropdown() {
 }
 
 /**
- * Generates dropdowns for album names
- * @function
- * @returns {void}
- */
-
-
-/**
  * Generates an additional information sentence based on selected criteria and displays it in a specified HTML element.
  * @function addInfo
  * @returns {void}

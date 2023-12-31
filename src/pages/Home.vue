@@ -9,14 +9,14 @@ const links: PageLinkProps[] = [
     text: 'Base',
     url: './base.html',
   },
-  // {
-  //   text: 'Racetrack',
-  //   url: './racetrack.html',
-  // },
-  // {
-  //   text: 'Settlement',
-  //   url: './settlement.html',
-  // },
+  {
+    text: 'Racetrack',
+    url: './racetrack.html',
+  },
+  {
+    text: 'Settlement',
+    url: './settlement.html',
+  },
   {
     text: 'Fauna',
     url: './fauna.html',
@@ -69,35 +69,22 @@ const links: PageLinkProps[] = [
 
 const builtByCredits: BuiltByProps[] = [
   {
-    text: 'Eisvana Wiki Scholars',
-    // link: 'https://nomanssky.fandom.com/wiki/Eisvana_Wiki_Scholars',
-    // img: '',
-    // imgAlt: 'Eisvana Wiki Scholars logo',
-  },
-  {
-    text: "Assistant for No Man's Sky",
-    link: 'https://nmsassistant.com/',
-    img: 'https://cdn.assistantapps.com/assistantNMS.png',
-    imgAlt: 'Assistant for NMS logo',
+    text: 'NMS Community Developers & Designers ',
+    link: 'https://nmscd.com',
   },
 ];
 
 const images: CivImageProps[] = [
   {
-    link: 'https://nomanssky.fandom.com/wiki/Eisvana',
-    imgAlt: 'Eisvana logo',
-    img: 'https://static.wikia.nocookie.net/nomanssky_gamepedia/images/8/85/Eisvana_Logo.png',
+    link: 'https://nmscd.com',
+    imgAlt: 'NMSCD',
+    img: "assets/images/webp/shared/nmscd.webp",
   },
-  // {
-  //   link: 'https://nomanssky.fandom.com/wiki/Eisvana_Wiki_Scholars',
-  //   imgAlt: 'Eisvana Wiki Scholars logo',
-  //   img: '',
-  // },
 ];
 </script>
 
 <template>
-  <h1 class="title is-spaced">Eisvana Wiki Page Creator</h1>
+  <h1 class="title is-spaced">NMS Wiki Page Creator</h1>
   <div class="subtitle is-4">Choose what page you want to create:</div>
   <nav
     aria-label="Subpages"
@@ -120,7 +107,7 @@ const images: CivImageProps[] = [
       :img-alt="credit.imgAlt"
     />
   </div>
-  <div class="eisvana-images">
+  <div class="images">
     <CivImage
       v-for="image in images"
       :img="image.img"
@@ -136,7 +123,7 @@ const images: CivImageProps[] = [
   font-size: 1.25rem;
 }
 
-.eisvana-images {
+.images {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

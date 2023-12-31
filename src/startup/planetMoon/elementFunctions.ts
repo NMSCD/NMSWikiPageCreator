@@ -5,8 +5,8 @@ import type { ElementFunctions } from "../../types/elements";
 import { pageData } from "../../variables/objects";
 
 const planetMoonElementFunctions: ElementFunctions = [
-	{
-		element: ['systemInput', 'portalglyphsInput'],
+  {
+		element: ['systemInput', 'hubnameInput', 'galaxyInput', 'regionInput'],
 		func: () => locationSentence()
 	},
 	{

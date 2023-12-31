@@ -2,7 +2,7 @@ import { assignElementFunctions } from "../../commonElements/elementBackend/elem
 import { albumFunctions } from "../../modules/albumactions";
 import { globalFunctions, pageData } from "../../variables/objects";
 import MTElementFunctions from "./elementFunctions";
-import { acquirementBundle, addInfo, albumDescExternal, albumItemTypeExternal, albumLinkGen, albumOtherExternal, albumTypeExternal, autoMTLoc, generateGalleryArray, hideCost, hideLocName, hideSrLocName, locRegNr, subtypeDropdown } from "./multitool";
+import { acquirementBundle, addInfo, albumDescExternal, albumItemTypeExternal, albumOtherExternal, albumTypeExternal, autoMTLoc, generateGalleryArray, hideCost, hideLocName, hideSrLocName, locRegNr, subtypeDropdown } from "./multitool";
 import { addStaticPageData, enPrefix } from "../../common";
 import '../../startup';
 
@@ -11,7 +11,7 @@ globalFunctions.albumOtherExternal = () => albumOtherExternal();
 globalFunctions.albumItemTypeExternal = () => albumItemTypeExternal();
 globalFunctions.albumTypeExternal = () => albumTypeExternal();
 globalFunctions.generateGalleryArray = () => generateGalleryArray();
-globalFunctions.albumLinkGen = () => albumLinkGen();
+
 
 addStaticPageData('galleryExplanationExternal', `
 	There is a preferred order of pictures:

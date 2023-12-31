@@ -16,7 +16,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -24,7 +24,7 @@ jobs:
       - name: Build App
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/staging" ]]; then
-            sed -i 's_EisvanaWikiPageCreator_EisvanaWikiPageCreator/staging_g' vite.config.ts
+            sed -i 's_NMSWikiPageCreator_NMSWikiPageCreator/staging_g' vite.config.ts
           fi
 
           npm ci
@@ -37,18 +37,18 @@ jobs:
         with:
           directory: dist
           overwrite: true
-        
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: EisvanaWikiPageCreator
+          name: NMSWikiPageCreator
           path: dist
 
   deploy-prod:
     runs-on: ubuntu-latest
     needs: build
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -56,9 +56,9 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:
-          name: EisvanaWikiPageCreator
+          name: NMSWikiPageCreator
           path: dist
-        
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -76,7 +76,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:
-          name: EisvanaWikiPageCreator
+          name: NMSWikiPageCreator
           path: dist
 
       - name: Deploy to GitHub Pages

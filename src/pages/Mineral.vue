@@ -58,6 +58,8 @@ const {
   discovered,
   discoveredlink,
   system,
+  galaxy,
+  hubname,
   planet,
   moon,
   glyphs,
@@ -140,11 +142,26 @@ function markCopy() {
         identifier="orgNameInput"
         v-model="orgName"
       />
+      <SimpleInput
+        label="Claimed by which civilized space:"
+        identifier="hubnameInput"
+        v-model="hubname"
+      />
       <InfoboxImageInput />
+      <SimpleInput
+        label="Name of the Galaxy:"
+        identifier="galaxyInput"
+        v-model="galaxy"
+      />
       <SimpleInput
         label="Name of the System:"
         identifier="systemInput"
         v-model="system"
+      />
+      <SimpleInput
+        label="Name of the Region where the systems is located:"
+        identifier="regionInput"
+        v-model="region"
       />
       <SimpleInput
         label="Name of the planet:"
@@ -294,6 +311,8 @@ function markCopy() {
         :mineral-name="sanitisedStrings.name"
         :image="image"
         :region="region"
+        :galaxy="galaxy"
+        :hubname="hubname"
         :systemName="sanitisedStrings.system"
         :planetName="sanitisedStrings.planet"
         :moonName="sanitisedStrings.moon"

@@ -10,22 +10,45 @@ import { footerInputs, globalElements, pageData } from '../variables/objects';
  * @function
  * @returns {void}
  */
-export function switchTheme(): void {
-  document.documentElement.dataset.transition = 'true';
-  const theme = document.documentElement.dataset.theme ?? 'light';
-  if (theme === 'light') {
-    localStorage.setItem('theme', 'dark');
-    document.documentElement.dataset.theme = 'dark';
-  } else {
-    localStorage.setItem('theme', 'light');
-    document.documentElement.dataset.theme = 'light';
-  }
+// Define the URLs of your images
+const imagenes = {
+  light: 'assets/images/webp/shared/nmscdbanner.webp',
+  dark: 'assets/images/webp/shared/nmscdbannerwhite.webp',
+};
 
-  // adding delay to allow the CSS transition to complete. This is only for Chrome, Firefox would work with any timeout (even 0) #chromesucks
-  setTimeout(() => {
-    delete document.documentElement.dataset.transition;
-  }, 400); // NoSonar wait 400ms so Chrome can finish its transition
+export function switchTheme(): void {
+  // Read the current localStorage theme
+  let currentTheme = localStorage.getItem('theme') ?? 'light';
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+  // Changes the theme
+  localStorage.setItem('theme', newTheme);
+  document.documentElement.dataset.theme = newTheme;
+
+  // Changes the banner image
+  setBannerImage(newTheme);
 }
+
+// adding delay to allow the CSS transition to complete. This is only for Chrome, Firefox would work with any timeout (even 0) #chromesucks
+setTimeout(() => {
+  delete document.documentElement.dataset.transition;
+}, 400); // NoSonar wait 400ms so Chrome can finish its transition
+
+function setBannerImage(theme: 'light' | 'dark') {
+  const imagen = document.querySelector('.banner img') as HTMLImageElement;
+  if (imagen) {
+    imagen.src = imagenes[theme];
+  } else {
+    console.log('Element .banner img not found');
+  }
+}
+
+// Make sure the DOM is fully loaded before setting the initial image
+document.addEventListener('DOMContentLoaded', () => {
+  const theme: 'light' | 'dark' = (localStorage.getItem('theme') ?? 'light') as 'light' | 'dark';
+  document.documentElement.dataset.theme = theme;
+  setBannerImage(theme);
+});
 
 /**
  * Displays the settings modal and restores default values.

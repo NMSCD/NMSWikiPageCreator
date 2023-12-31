@@ -183,7 +183,6 @@ export function showAll() {
   }
 
   numberStats();
-  researchTeam();
   image(globalElements.input.fileUpload as HTMLInputElement);
   try {
     glyphInputOnChange(globalElements.input.portalglyphsInput as HTMLInputElement);
@@ -488,8 +487,6 @@ export function toggleSection(
   button!.dataset[displayID] = state ? '' : 'none';
 }
 
-
-
 /**
  * Adds a "researchteam" value to `pageData`, and displays it on the page.
  *
@@ -511,9 +508,8 @@ export function researchTeam() {
   // Asignar directamente el valor de researchteamInput a researchteam
   const researchteam = researchteamValue;
   const outputElement = globalElements.output[dest] as HTMLElement;
-  outputElement.innerText = researchteam as string;
+  outputElement.innerText = researchteam;
 }
-
 
 /**
  * Adds documentation to a page if the documenter is not the same as the discoverer.
@@ -558,7 +554,7 @@ export function displayResearch() {
   const chapter = pageData.researchteam as string;
   if (!chapter) return chapter;
 
-  const chapterSentence = `[[${chapter}]] member`
+  const chapterSentence = `[[${chapter}]] member`;
   return chapterSentence;
 }
 
@@ -1176,7 +1172,7 @@ export function addDomAsElement(dom: Document, dest: HTMLElement, position: Inse
 }
 
 export function getWormAlbum() {
-  return 'Eisvana Rare Fauna Album#Sandworm|Eisvana Rare Fauna';
+  return 'Rare Fauna Album#Sandworm|Rare Fauna';
 }
 
 export function limitCreatureSize(input: HTMLInputElement) {

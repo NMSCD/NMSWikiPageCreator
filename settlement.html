@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Eisvana Wiki Page Creator - Settlement</title>
-</head>
 
-<body>
-  <div class="container">
-    <nav><a href="./" title="Main page">&larr; Return to main page</a></nav>
-    <h1 class="title is-3">Eisvana Wiki Page Creator - Settlement</h1>
-    <dialog id="explanation" class="modal-content content"></dialog>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NMS Wiki Page Creator - Settlement</title>
+    <div style="display: inline-block; text-align: center; width: 100%">
+    </div>
+    <meta name="application-name" content="NMS Wiki Page Creator">
+    <meta name="description"
+      content="Genere fácilmente el código wiki para crear una página de un asentamiento en No Man's Sky Wiki!">
+    <meta name="theme-color" content="#280033">
+    <meta name="keywords" content="No Man's Sky, NMS, Wiki, Fandom, Muhaddil, Page Creator, Settlement">
+    <script src="./src/pages/settlement" type="module"></script>
+  </head>
 
+  <body>
+    <div class="container">
+      <nav><a href="./" title="Main page">&larr; Return to main page</a></nav>
+      <h1 class="title is-3">NMS Wiki Page Creator - Settlement</h1>
+      <dialog id="explanation" class="modal-content content"></dialog>
     <main class="columns is-desktop">
       <div id="input" class="column is-full-mobile">
         <div class="table">
@@ -34,6 +42,12 @@
             <input type="text" data-dest="name" id="nameInput">
           </div>
           <div class="table-cell text">
+            <label for="hubnameInput">Claimed by which civilized space:</label>
+          </div>
+          <div class="table-cell data">
+            <input type="text" data-dest="hubname" id="hubnameInput">
+          </div>
+          <div class="table-cell text">
             <label for="fileInput">Main image name, including file extension:</label>
             <button class="tooltip" name="fileUploadTooltip">
               <data>Picture won't be uploaded to the wiki. This is only to autofill the
@@ -54,24 +68,36 @@
             <input type="file" id="fileUpload" accept="image/*">
           </div>
           <div class="table-cell text">
+            <label for="galaxyInput">Name of the galaxy:</label>
+          </div>
+          <div class="table-cell data">
+            <input type="text" data-dest="galaxy" id="galaxyInput">
+          </div>
+          <div class="table-cell text">
             <label for="systemInput">Name of the system:</label>
           </div>
           <div class="table-cell data">
             <input type="text" data-dest="system" id="systemInput">
           </div>
           <div class="table-cell text">
+            <label for="regionInput">Name of the region where the system is located:</label>
+          </div>
+          <div class="table-cell data">
+            <input type="text" data-dest="region" id="regionInput">
+          </div>
+          <div class="table-cell text">
             <label for="planetInput">Name of the planet:</label>
             <button class="tooltip">
-              <data>Planet Name OR the planet circled by the moon where the base can be found.</data>
+              <data>Planet Name OR the planet circled by the moon where the settlement can be found.</data>
             </button>
           </div>
           <div class="table-cell data">
             <input type="text" data-dest="planet" id="planetInput">
           </div>
           <div class="table-cell text">
-            <label for="moonInput">Name of the moon (if base is on moon):</label>
+            <label for="moonInput">Name of the moon (if settlement is on moon):</label>
             <button class="tooltip">
-              <data>If the base is located on a moon. Leave blank if the base is on a planet.</data>
+              <data>If the settlement is located on a moon. Leave blank if the settlement is on a planet.</data>
             </button>
           </div>
           <div class="table-cell data">
@@ -114,7 +140,7 @@
             <div id="portalglyphButtons"></div>
             <output name="portalglyphs" id="portalglyphsPreview" class="glyph"></output>
           </div>
-          <div class="table-cell text">
+        <div class="table-cell text">
 						<label>System Faction:</label>
 						<button class="tooltip">
 							<data>Found in the expanded view of the galaxy map. If it doesn't display anything, it's
@@ -135,7 +161,7 @@
 							<option value="Vy'keen">Vy'keen</option>
 						</select>
 					</div>
-          <div class="table-cell text">
+  <!--         <div class="table-cell text">
 						<label>System economy:</label>
 						<button class="tooltip">
 							<data>Found in the expanded view of the galaxy map. If it doesn't display anything, it's
@@ -197,7 +223,7 @@
 								<option value="Data Unavailable">Data Unavailable</option>
 							</optgroup>
 						</select>
-					</div>
+					</div> -->
           <div class="table-cell text">
 						<label>Class:</label>
 					</div>
@@ -209,19 +235,19 @@
 							<option value="C">C</option>
 						</select>
 					</div>
-          <div data-section="population" class="table-cell text">
-            <label for="populationInput">Population amount of the Settlement?</label>
+    <div data-section="population" class="table-cell text">
+    <label for="populationInput">Population amount of the Settlement?</label>
             <button class="tooltip">
               <data>The population amount of the settlement.</data>
               <data>Settlement population amount</data>
               <data>The population amount of the settlement.</data>
-              <data>population/populationAmount</data>
+              <data>settlement/populationAmount</data>
             </button>
           </div>
           <div data-section="census" class="table-cell data">
             <input type="text" data-dest="population" id="populationInput">
           </div>
-          <div data-section="sentinelprobability" class="table-cell text">
+     <!--      <div data-section="sentinelprobability" class="table-cell text">
             <label for="sentinelprobabilityInput">Sentinel Alert Level?</label>
             <button class="tooltip">
               <data>The Sentinel Alert Level of the settlement.</data>
@@ -232,14 +258,14 @@
           </div>
           <div data-section="census" class="table-cell data">
             <input type="text" data-dest="sentinelprobability" id="sentinelprobabilityInput" placeholder="5%">
-          </div>
+          </div> -->
           <div data-section="settlementproduction" class="table-cell text">
             <label for="settlementproductionInput">Industry</label>
             <button class="tooltip">
               <data>The product that the Settlement produces.</data>
               <data>Industry</data>
               <data>The product that the Settlement produces.</data>
-              <data>settlementproduction/settlementProduction</data>
+              <data>settlement/settlementProduction</data>
             </button>
           </div>
           <div data-section="census" class="table-cell data">
@@ -248,9 +274,9 @@
           <div class="table-cell text">
             <label>Gamemode:</label>
             <button class="tooltip">
-              <data>Gamemode of the save on which this base was built.</data>
+              <data>Gamemode of the save on which this settlement was found.</data>
               <data>Gamemode</data>
-              <data>Gamemode of the save on which this base was built.<br>Found in the main menu:</data>
+              <data>Gamemode of the save on which this settlement was found.<br>Found in the main menu:</data>
               <data>shared/gamemode</data>
             </button>
           </div>
@@ -275,23 +301,26 @@
               <option value="NS">Switch</option>
             </select>
           </div>
-          <div data-section="overseerlink" class="table-cell text">
+          <div class="table-cell text">
             <label for="overseerlinkInput">Overseer wiki name:</label>
           </div>
-          <div data-section="census" class="table-cell data">
-            <input type="text" data-dest="overseerlink" id="overseerlinkInput" >
+          <div class="table-cell data">
+            <input type="text" data-dest="overseerlink" id="overseerlinkInput">
           </div>
-          <div data-section="overseer" class="table-cell text">
+          <div class="table-cell text">
             <label for="overseerInput">Overseer alias if no wiki:</label>
           </div>
-          <div data-section="census" class="table-cell data">
-            <input type="text" data-dest="overseer" id="overseerInput" >
+          <div class="table-cell data">
+            <input type="text" data-dest="overseer" id="overseerInput">
           </div>
-          <div class="tableHeader data no-flex">
-            <label for="addInfoInput">Additional Information:</label>
-            <textarea id="addInfoInput" data-dest="addInfo"
-              placeholder="Any nearby resources, tourist traps, other bases."></textarea>
-          </div>
+          <!-- <div class="table-cell text">
+          <label for="descriptionInput">Descripción del asentamiento:</label></div>
+          <div class="table-cell data">
+          <input type="text" data-dest="description" id="descriptionInput"></div>
+          <div class="table-cell text">
+          <label for="surveyedonInput">¿Cuándo se investigó este asentamiento?</label></div>
+          <div class="table-cell data">
+          <input type="date" data-dest="surveyedon" id="surveyedonInput"></div>-->
         </div>
         <div id="galleryInput"></div>
         <div id="galleryItems" class="gallery-items-wrapper"></div>
@@ -302,50 +331,50 @@
           <div>{{Version|<output id="release" name="release"></output>}}</div>
           <!-- <div>{{<output id="civStub"></output>}}</div> -->
           <div> {{Settlement infobox
-          <div> | name = <output id="name" name="name"></output></div>
-          <div> | image = <output id="image"></output></div>
-          <div> | galaxy = Eissentam
-          <div> | region = <output id="region"></output></div>
-          <div> | system = <output id="system" name="system"></output></div>
-          <div> | planet = <output id="planet"></output></div>
-          <div> | moon = <output id="moon"></output></div>
-          <div> | axes = <output id="axes"></output></div>
-          <div> | coordinates = {{Glyphs2Coords|<output id="portalglyphs" name="portalglyphs"></output>}}</div>
-          <div> | portalglyphs = <output id="portalglyphs1" name="portalglyphs"></output></div>
-          <div> | economy = <output id="economy"></output></div>
-          <div> | faction = <output id="faction"></output></div>
-          <div> | class = <output id="class"></output></div>
-          <div> | population = <output id="population"></output></div>
-          <div> | sentinel = <output id="sentinelprobability"></output></div>
-          <div> | industry = <output id="settlementproduction"></output></div>
-          <div> | civilized = Eisvana</div>
-          <div> | overseer = <output id="overseer"></output></div>
-          <div> | overseerlink = <output id="overseerlink"></output></div>
-          <div> | profitable =
-          <div> | platform = <output id="platform"></output></div>
-          <div> | mode = <output id="mode"></output></div>
-          <div> | release = <output id="release1" name="release"></output></div>
-          <div> }}
-          <div>'''<output id="name1" name="name"></output>''' is a player base.</div>
+            <div> | name = <output id="name" name="name"></output></div>
+            <div> | image = <output id="image"></output></div>
+            <div> | galaxy = <output id="galaxy" name="galaxy"></output></div>
+            <div> | region = <output id="region" name="region"></output></div>
+            <div> | system = <output id="system" name="system"></output></div>
+            <div> | planet = <output id="planet"></output></div>
+            <div> | moon = <output id="moon"></output></div>
+            <div> | axes = <output id="axes" name="axes"></output></div>
+            <div> | coordinates = {{Glyphs2Coords|<output id="portalglyphs" name="portalglyphs"></output>}}</div>
+            <div> | portalglyphs = <output id="portalglyphs1" name="portalglyphs"></output></div>
+     <!--   <div> | economy = <output id="economy"></output></div>-->
+            <div> | faction = <output id="faction"></output></div>
+            <div> | class = <output id="class"></output></div>
+            <div> | population = <output id="population"></output></div>
+      <!--  <div> | sentinel = <output id="sentinelprobability"></output></div> -->
+            <div> | industry = <output id="settlementproduction"></output></div>
+            <div> | civilized = <output id="hubname" name="hubname"></output></div>
+            <div> | overseer = <output id="overseer"></output></div>
+            <div> | overseerlink = <output id="overseerlink"></output></div>
+   <!--     <div> | profitable = </div> -->
+            <div> | platform = <output id="platform"></output></div>
+            <div> | mode = <output id="mode"></output></div>
+            <div> | release = <output id="release1" name="release"></output></div>
+            <div> }}
+          <div>'''<output id="name1" name="name"></output>''' is a planetary settlement.</div>
           <br>
 
           <div>==Summary==</div>
-          <div>'''<output id="name2" name="name"></output>''' is a [[Habitable Base|player base]], located
+          <div>'''<output id="name2" name="name"></output>''' is a [[Planetary Settlement|planetary settlement]], located
             on the <output id="celestialBody"></output> in the [[<output id="system1" name="system"></output>]] system.
           </div>
           <br>
 
-          <div>==Layout==</div>
-          <div><output id="layout"></output></div>
-          <br>
+          <!--     <div>==Description==</div>
+            <div><output id="description" name="description"></output></div>
+            <br>-->
 
-          <div>==Features==</div>
-          <div><output id="features"></output></div>
+          <div>==Location==</div>
+          <div>It is located at <output id="axes" name="axes"></output>.</div>
+          <div>{{CoordGlyphConvert|<output id="portalglyphs" name="portalglyphs"></output>}}</div>
           <br>
 
           <div>==Additional Information==</div>
-          <div><span data-add-info=""></span><output id="addInfo"></output></div>
-          <div><span data-add-info="<br>"></span><output id="docby"></output></div>
+					<div><span data-add-info="<br>"></span><output id="docby"></output></div>
           <br>
 
           <div id="gallery"></div>
@@ -357,3 +386,4 @@
 </body>
 
 </html>
+

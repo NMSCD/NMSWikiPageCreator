@@ -31,7 +31,6 @@ import { updateGlobalElements } from '../commonElements/elementBackend/elementSt
 import { buildDescriptor, initialiseSectionInputs, wikiCodePercentage } from './celestialobjectslogic';
 import type { ElementFunctions, ElementIds } from '../types/elements';
 import { getResourceData, getSentinelData } from '../datalists/planetDatalists';
-import { getRegNumber } from './locationLogic';
 import creatureData from './creatureData';
 import type { LinkObjValues, PlanetPropResourceLinks } from '../types/links';
 import type { StdObj } from '../types/objects';
@@ -76,11 +75,9 @@ export function planetDescriptor(element: HTMLInputElement) {
  * @returns {string} - A string describing the location of the current star system.
  */
 export function locationSentence() {
-  const { system: systemName, region: regionName } = pageData;
+  const { system: systemName, region: regionName, galaxy, hubname } = pageData;
 
-  const output = `It can be found in the [[${systemName}]] [[star system]] in the [[${regionName}]] [[region]] (EV${getRegNumber(
-    regionName as string
-  )}) of [[Eisvana]], in the [[Eissentam]] [[galaxy]].`;
+  const output = `It can be found in the [[${systemName}]] [[star system]] in the [[${regionName}]] [[region]] of [[${hubname}]], in the [[${galaxy}]] [[galaxy]].`;
 
   (globalElements.output.location as HTMLOutputElement).innerText = output;
 }
