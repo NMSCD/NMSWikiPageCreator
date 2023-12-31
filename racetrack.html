@@ -175,28 +175,25 @@
               <option value="Nautilon">Nautilon</option>
             </select>
           </div> -->
-          <table>
-            <tr>
-              <td>
-                <label for="Roamer">Roamer</label>
-                <input type="checkbox" id="Roamer" name="exocraftInput" value="[[Roamer]]">
-                <label for="Nomad">Nomad</label>
-                <input type="checkbox" id="Nomad" name="exocraftInput" value="[[Nomad]]"> <br>
-                <label for="Pilgrim">Pilgrim</label>
-                <input type="checkbox" id="Pilgrim" name="exocraftInput" value="[[Pilgrim]]"><br>
-                <label for="Starship">Starship</label>
-                <input type="checkbox" id="Starship" name="exocraftInput" value="[[Starship]]"><br>
-              </td>
-              <td>
-                <label for="Colossus">Colossus</label>
-                <input type="checkbox" id="Colossus" name="exocraftInput" value="[[Colossus]]">
-                <label for="Minotaur">Minotaur</label>
-                <input type="checkbox" id="Minotaur" name="exocraftInput" value="[[Minotaur]]"><br>
-                <label for="Nautilon">Nautilon</label>
-                <input type="checkbox" id="Nautilon" name="exocraftInput" value="[[Nautilon]]"><br>
-              </td>
-            </tr>
-          </table>
+          <div class="table-cell data">
+            <div class="checkboxes-grid">
+              <label class="checkbox" for="Roamer">
+                <input type="checkbox" id="Roamer" name="exocraftInput" value="[[Roamer]]"><span class="checkbox-label">Roamer</span></label>
+              <label class="checkbox" for="Nomad">
+                <input type="checkbox" id="Nomad" name="exocraftInput" value="[[Nomad]]"><span class="checkbox-label">Nomad</span></label>
+              <label class="checkbox" for="Pilgrim">
+                <input type="checkbox" id="Pilgrim" name="exocraftInput" value="[[Pilgrim]]"><span class="checkbox-label">Pilgrim</span></label>
+              <label class="checkbox" for="Starship">
+                <input type="checkbox" id="Starship" name="exocraftInput" value="[[Starship]]"><span class="checkbox-label">Starship</span></label>
+              <label class="checkbox" for="Colossus">
+                <input type="checkbox" id="Colossus" name="exocraftInput" value="[[Colossus]]"><span class="checkbox-label">Colossus</span></label>
+              <label class="checkbox" for="Minotaur">
+                <input type="checkbox" id="Minotaur" name="exocraftInput" value="[[Minotaur]]"><span class="checkbox-label">Minotaur</span></label>
+              <label class="checkbox" for="Nautilon">
+                <input type="checkbox" id="Nautilon" name="exocraftInput" value="[[Nautilon]]"><span class="checkbox-label">Nautilon</span></label>
+            </div>
+          </div>
+
           <div class="table-cell text">
             <label>Gamemode:</label>
             <button class="tooltip">
@@ -231,7 +228,7 @@
             <label>Researchteam you belong to:</label>
           </div>
           <div class="table-cell data">
-            <input type="text" data-dest-noauto="researchteam" id="researchteamInput" placeholder="Your hub may not have this">
+            <input type="text" data-dest-noauto="researchteam" id="researchteamInput" placeholder="Your civ may not have this">
           </input>
           </div>
           <div class="tableHeader data no-flex">
