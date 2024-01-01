@@ -6,7 +6,6 @@ import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/NMSWikiPageCreator/',
   plugins: [vue()],
   test: {
     browser: {
