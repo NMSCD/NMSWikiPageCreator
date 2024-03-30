@@ -163,8 +163,3 @@ export function restoreDefaults() {
   hideDiscoverer();
   pageData.restored = true;
 }
-
-/**
- * Validates a glyph user input and updates the UI with any errors
- * @param {HTMLInputElement} input - The user's glyph input
- */
