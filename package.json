@@ -15,7 +15,7 @@
     "@vitest/browser": "^1.6.0",
     "playwright": "^1.44.1",
     "prettier": "^3.3.0",
-    "sass": "^1.77.2",
+    "sass": "^1.77.4",
     "typescript": "^5.4.5",
     "vite": "^5.2.11",
     "vitest": "^1.2.2",
