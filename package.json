@@ -19,7 +19,7 @@
     "typescript": "^5.4.5",
     "vite": "^5.3.1",
     "vitest": "^1.2.2",
-    "vue": "^3.4.27"
+    "vue": "^3.4.29"
   },
   "dependencies": {
     "@suadelabs/vue3-multiselect": "^1.0.2",
