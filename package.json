@@ -13,13 +13,16 @@
     "@types/node": "^20.14.2",
     "@types/sortablejs": "^1.15.1",
     "@vitest/browser": "^1.6.0",
-    "playwright": "^1.44.1",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^14.12.3",
     "prettier": "^3.3.2",
     "sass": "^1.77.5",
     "typescript": "^5.4.5",
     "vite": "^5.3.1",
     "vitest": "^1.2.2",
-    "vue": "^3.4.29"
+    "vue": "^3.4.29",
+    "webdriverio": "^8.39.0"
   },
   "dependencies": {
     "@suadelabs/vue3-multiselect": "^1.0.2",

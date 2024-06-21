@@ -14,8 +14,13 @@ export default defineConfig({
     browser: {
       enabled: true,
       headless: true,
-      provider: 'playwright',
-      name: 'chromium',
+      name: 'chrome',
+    },
+    coverage: {
+      include: ['src/**.{ts,vue}', 'src/**/**.{ts,vue}'],
+      exclude: ['src/api/**/**.ts', 'src/**/**.d.ts'],
+      clean: true,
+      all: true,
     },
   },
   build: {
