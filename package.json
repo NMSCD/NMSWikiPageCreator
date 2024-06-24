@@ -23,7 +23,7 @@
     "typescript": "^5.4.5",
     "vite": "^5.3.1",
     "vitest": "^1.2.2",
-    "vue": "^3.4.29",
+    "vue": "^3.4.30",
     "webdriverio": "^8.39.0"
   },
   "dependencies": {
