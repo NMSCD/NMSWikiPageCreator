@@ -4,6 +4,7 @@ footer {
   &.footer {
     text-align: center;
     background-color: var(--footer-backgroundcolor);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   button:not(#settingsPortalglyphButtons button) {
