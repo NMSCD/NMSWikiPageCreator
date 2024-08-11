@@ -61,6 +61,7 @@ input {
 	background-color: var(--input-background);
 	color: var(--text-color);
 	border-color: var(--border-color);
+	transition: background-color 0.3s ease, color 0.3s ease;
 
 	&:hover {
 		border-color: var(--border-color-hover);
@@ -102,6 +103,7 @@ input[type="file"]::file-selector-button {
 	border-color: var(--border-color);
 	border-radius: var(--border-radius);
 	padding-inline-start: 5px;
+	transition: background-color 0.3s ease, color 0.3s ease;
 
 	&:hover {
 		background-color: var(--input-background-hover);

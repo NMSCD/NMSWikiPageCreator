@@ -14,6 +14,7 @@
 .multiselect__input,
 .multiselect__single {
   background: var(--input-background-hover);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .multiselect__input::placeholder {
@@ -23,6 +24,7 @@
 .multiselect__tags {
   background: var(--input-background);
   border-color: var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
 		border-color: var(--border-color-hover);
@@ -32,6 +34,7 @@
 .multiselect__content-wrapper {
   background: var(--input-background);
   border-color: var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
   
 	&:hover {
 		border-color: var(--border-color-hover);
