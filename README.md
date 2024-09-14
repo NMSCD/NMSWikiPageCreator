@@ -1,4 +1,4 @@
-[![Build](https://github.com/NMSCD/NMSWikiPageCreator/actions/workflows/build-deploy.yml/badge.svg)](https://github.com/NMSCD/NMSWikiPageCreator/actions/workflows/build-deploy.yml) [![pages-build-deployment](https://github.com/NMSCD/NMSWikiPageCreator/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/NMSCD/NMSWikiPageCreator/actions/workflows/pages/pages-build-deployment)
+[![Build](https://github.com/NMSCD/NMSWikiPageCreator/actions/workflows/deploy-all.yml/badge.svg)](https://github.com/NMSCD/NMSWikiPageCreator/actions/workflows/deploy-all.yml) [![pages-build-deployment](https://github.com/NMSCD/NMSWikiPageCreator/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/NMSCD/NMSWikiPageCreator/actions/workflows/pages/pages-build-deployment)
 # [NMS Wiki Page Creator](http://wiki.nmscd.com/)
 # No Man's Sky - Wiki page creation website!
 
