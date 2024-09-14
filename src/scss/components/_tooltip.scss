@@ -12,6 +12,7 @@ button.tooltip {
 	position: relative;
 	display: inline-block;
 	outline: none;
+	transition: background-color 0.3s ease, color 0.3s ease;
 
 	&>data {
 		display: none;
@@ -32,6 +33,7 @@ button.tooltip {
 		visibility: hidden;
 		width: var(--width);
 		background-color: var(--tooltip-background);
+		transition: background-color 0.3s ease, color 0.3s ease;
 		color: var(--text-color);
 		text-align: center;
 		border-radius: var(--border-radius);

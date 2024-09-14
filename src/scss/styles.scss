@@ -46,6 +46,7 @@ html[data-debug='true']::before {
   text-align: center;
   font-size: 1.5rem;
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -476,6 +477,7 @@ label > input[type='radio'] ~ span,
   grid-template-columns: repeat(8, 60px);
   gap: 1px;
   width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   .glyph.icon.is-small {
     height: 1em;
