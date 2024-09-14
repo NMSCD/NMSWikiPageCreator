@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia';
-import { versions } from '../variables/versions';
 import { sanitiseString } from '@/common';
 
 interface StaticPageData {
@@ -56,7 +55,7 @@ interface PageData {
 
 export const usePageDataStore = defineStore('pageData', {
   state: (): PageData => ({
-    release: versions[0],
+    release: '',
     name: '',
     image: '',
     region: localStorageData().regionInput ?? '',
