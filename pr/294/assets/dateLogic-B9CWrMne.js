@@ -1,0 +1,1 @@
+import{G as a}from"./links-rbsmWE0W.js";function s(t){const s=t.value,n=t.dataset.destNoauto;a(s.replaceAll("-","/"),n)}function n(t){const s=(new Date).getFullYear();a(s.toString(),t)}export{n as g,s as p};
