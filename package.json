@@ -21,7 +21,7 @@
     "@vueuse/core": "^12.7.0",
     "happy-dom": "^17.1.4",
     "pinia": "^3.0.1",
-    "prettier": "^3.5.1",
+    "prettier": "^3.5.3",
     "sass": "^1.85.1",
     "typescript": "^5.8.2",
     "vite": "^6.2.0",
