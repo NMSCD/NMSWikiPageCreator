@@ -17,6 +17,9 @@ export default defineConfig({
         {
           browser: 'chrome',
         },
+        {
+          browser: 'firefox',
+        },
       ],
     },
     coverage: {
