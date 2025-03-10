@@ -13,7 +13,11 @@ export default defineConfig({
     browser: {
       enabled: true,
       headless: true,
-      name: 'chrome',
+      instances: [
+        {
+          browser: 'chrome',
+        },
+      ],
     },
     coverage: {
       include: ['src/**.{ts,vue}', 'src/**/**.{ts,vue}'],
