@@ -40,7 +40,7 @@ defineProps<{
     <div>| system = {{ systemName }}</div>
     <div>| planet = {{ planetName }}</div>
     <div>| moon = {{ moonName }}</div>
-    <div>| civilized = {{ hubname }} </div>
+    <div>| civilized = {{ hubname }}</div>
     <div>| type = {{ type }}</div>
     <div>| biome = {{ biome }}</div>
     <div>| polymorphic = {{ polymorphic }}</div>

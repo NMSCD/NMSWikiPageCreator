@@ -1,9 +1,23 @@
-import { assignElementFunctions } from "../../commonElements/elementBackend/elementFunctions";
-import { albumFunctions } from "../../modules/albumactions";
-import { globalFunctions, pageData } from "../../variables/objects";
-import MTElementFunctions from "./elementFunctions";
-import { acquirementBundle, addInfo, albumDescExternal, albumItemTypeExternal, albumOtherExternal, albumTypeExternal, autoMTLoc, generateGalleryArray, hideCost, hideLocName, hideSrLocName, locRegNr, subtypeDropdown } from "./multitool";
-import { addStaticPageData, enPrefix } from "../../common";
+import { assignElementFunctions } from '../../commonElements/elementBackend/elementFunctions';
+import { albumFunctions } from '../../modules/albumactions';
+import { globalFunctions, pageData } from '../../variables/objects';
+import MTElementFunctions from './elementFunctions';
+import {
+  acquirementBundle,
+  addInfo,
+  albumDescExternal,
+  albumItemTypeExternal,
+  albumOtherExternal,
+  albumTypeExternal,
+  autoMTLoc,
+  generateGalleryArray,
+  hideCost,
+  hideLocName,
+  hideSrLocName,
+  locRegNr,
+  subtypeDropdown,
+} from './multitool';
+import { addStaticPageData, enPrefix } from '../../common';
 import '../../startup';
 
 globalFunctions.albumDescExternal = () => albumDescExternal();
@@ -12,8 +26,9 @@ globalFunctions.albumItemTypeExternal = () => albumItemTypeExternal();
 globalFunctions.albumTypeExternal = () => albumTypeExternal();
 globalFunctions.generateGalleryArray = () => generateGalleryArray();
 
-
-addStaticPageData('galleryExplanationExternal', `
+addStaticPageData(
+  'galleryExplanationExternal',
+  `
 	There is a preferred order of pictures:
 	<div class='is-flex is-justify-content-center'>
 		<ol class='has-text-left'>
@@ -24,7 +39,8 @@ addStaticPageData('galleryExplanationExternal', `
 			<li>Tool in Hand</li>
 			<li>First Person View</li>
 		</ol>
-	</div>`)
+	</div>`
+);
 
 assignElementFunctions(MTElementFunctions);
 
@@ -38,4 +54,4 @@ hideSrLocName();
 locRegNr();
 hideCost();
 albumFunctions();
-enPrefix(pageData.type as string | undefined ?? '', 'enPrefix');
+enPrefix((pageData.type as string | undefined) ?? '', 'enPrefix');

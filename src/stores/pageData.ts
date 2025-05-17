@@ -9,7 +9,6 @@ interface StaticPageData {
 
 const route = window.location.pathname.split('/')!.at(-1)!.slice(0, -5); // NoSonar getting the current filename without the "html" ending
 
-
 export const useStaticPageDataStore = defineStore('staticPageData', {
   state: (): StaticPageData => ({
     route,
@@ -102,9 +101,7 @@ export const usePageDataStore = defineStore('pageData', {
       const isLink = state.docBy.startsWith('{{');
       const hasResearchteam = state.researchteam.trim().length > 0;
       const documenter = isLink ? state.docBy : `''${state.docBy}''`;
-      const researchteamLink = state.researchteam.includes('Wiki')
-        ? ''
-        : `[[${state.researchteam}]] member`;
+      const researchteamLink = state.researchteam.includes('Wiki') ? '' : `[[${state.researchteam}]] member`;
       return `${hasResearchteam ? researchteamLink : ''} ${documenter}`;
     },
   },
