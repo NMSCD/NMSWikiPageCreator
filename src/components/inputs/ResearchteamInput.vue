@@ -14,7 +14,10 @@ const { researchteam } = storeToRefs(pageData);
     </template>
 
     <template #input>
-      <input type="text" v-model="researchteam">
+      <input
+        type="text"
+        v-model="researchteam"
+      />
     </template>
   </InputRow>
 </template>

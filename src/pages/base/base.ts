@@ -11,7 +11,6 @@ const app = createApp(App);
 
 app.mount('#featuresInput');
 
-
 /**
  * Validates Discord tags.
  *

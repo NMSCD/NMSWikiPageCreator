@@ -12,7 +12,9 @@ body {
   background-color: var(--body-backgroundcolor);
   color: var(--text-color);
   transition: filter 0.15s;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   &[data-mark='false'] #output {
     -webkit-user-select: none;
@@ -46,7 +48,9 @@ html[data-debug='true']::before {
   text-align: center;
   font-size: 1.5rem;
   color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 h1,
@@ -56,7 +60,9 @@ h4,
 .title,
 .subtitle {
   color: var(--heading-color) !important;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .article-grid {
@@ -97,8 +103,10 @@ article img {
   height: 34px;
   margin-bottom: 15px;
   outline: none !important;
-  transition: all .15s ease-in-out;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.15s ease-in-out;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .select2.select2-container .select2-selection .select2-selection__rendered {
@@ -112,7 +120,6 @@ body .select2-container--default .select2-results__option--selected {
   color: var(--text-color) !important;
 }
 
-
 .select2.select2-container .select2-selection .select2-selection__arrow {
   background-color: var(--input-background);
   border-left: 1px solid #ccc;
@@ -121,15 +128,21 @@ body .select2-container--default .select2-results__option--selected {
   border-radius: 0 3px 3px 0;
   height: 32px;
   width: 33px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .select2.select2-container.select2-container--open .select2-selection.select2-selection--single {
   background-color: var(--input-background);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-.select2.select2-container.select2-container--open .select2-selection.select2-selection--single .select2-selection__arrow {
+.select2.select2-container.select2-container--open
+  .select2-selection.select2-selection--single
+  .select2-selection__arrow {
   -webkit-border-radius: 0 3px 0 0;
   -moz-border-radius: 0 3px 0 0;
   border-radius: 0 3px 0 0;
@@ -157,7 +170,7 @@ body .select2-container--default .select2-results__option--selected {
 
 .select2.select2-container .select2-selection--multiple .select2-selection__choice {
   background-color: var(--input-background);
-  color:var(--text-color);
+  color: var(--text-color);
   border-color: var(--border-color-hover);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -168,7 +181,9 @@ body .select2-container--default .select2-results__option--selected {
   line-height: 24px;
   font-size: auto;
   position: relative;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .select2.select2-container .select2-selection--multiple .select2-selection__choice .select2-selection__choice__remove {
@@ -246,7 +261,9 @@ img {
 nav {
   margin-block: 1rem;
   font-size: larger;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .container {
@@ -477,7 +494,9 @@ label > input[type='radio'] ~ span,
   grid-template-columns: repeat(8, 60px);
   gap: 1px;
   width: 100%;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   .glyph.icon.is-small {
     height: 1em;

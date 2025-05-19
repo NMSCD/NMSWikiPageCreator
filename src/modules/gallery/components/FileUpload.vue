@@ -158,7 +158,9 @@ function buildFileItem(files: File[], storeLoc: Ref<FileItem[]>) {
   border: 2px dashed var(--border-color);
   cursor: pointer;
   margin-block-end: 1rem;
-  transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+  transition:
+    background-color 0.2s ease-in-out,
+    border 0.2s ease-in-out;
 
   &:hover,
   &.drag-active {

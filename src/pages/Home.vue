@@ -78,7 +78,7 @@ const images: CivImageProps[] = [
   {
     link: 'https://nmscd.com',
     imgAlt: 'NMSCD',
-    img: "assets/images/webp/shared/nmscd.webp",
+    img: 'assets/images/webp/shared/nmscd.webp',
   },
 ];
 </script>

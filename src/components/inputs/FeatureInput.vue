@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import '@suadelabs/vue3-multiselect/dist/vue3-multiselect.css';
-import '../../scss/components/vue3-multiselect.scss'
+import '../../scss/components/vue3-multiselect.scss';
 import { ref, watchEffect } from 'vue';
 import Multiselect from '@suadelabs/vue3-multiselect';
 
 const value = ref('');
-const options = ['Exocraft Summoning Station',
+const options = [
+  'Exocraft Summoning Station',
   'Pilgrim Geobay',
   'Nomad Geobay',
   'Roamer Geobay',
@@ -59,16 +60,13 @@ const options = ['Exocraft Summoning Station',
   'Science Terminal',
   'Exocraft Terminal',
   'Construction Terminal',
-  'Agricultural Terminal'
+  'Agricultural Terminal',
 ];
 
 const element = document.getElementById('features');
 
 watchEffect(() => {
-  if (element)
-    element.innerText = [value.value]
-      .flatMap((item) => `* [[${item}]]`)
-      .join('\n');
+  if (element) element.innerText = [value.value].flatMap((item) => `* [[${item}]]`).join('\n');
 });
 </script>
 
@@ -81,4 +79,3 @@ watchEffect(() => {
     :close-on-select="false"
   ></Multiselect>
 </template>
-
