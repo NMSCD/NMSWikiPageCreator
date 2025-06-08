@@ -1,1 +1,1 @@
-const s=(s,o)=>{const t=s.__vccOpts||s;for(const[s,c]of o)t[s]=c;return t};export{s as _};
+"use strict";const r=(o,s)=>{const c=o.__vccOpts||o;for(const[t,n]of s)c[t]=n;return c};export{r as _};
