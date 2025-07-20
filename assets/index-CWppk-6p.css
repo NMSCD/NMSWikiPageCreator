@@ -1,1 +1,1 @@
-.debug-skip-label[data-v-9f13fa51]{gap:.3rem}html[data-debug=true]:before{display:block;width:100%;content:"Debug";background-color:#bf4040;position:fixed;z-index:2;text-align:center;font-size:1.5rem;color:#fff}
+.debug-skip-label[data-v-9f13fa51]{gap:.3rem}html[data-debug=true]:before{content:"Debug";z-index:2;text-align:center;color:#fff;background-color:#bf4040;width:100%;font-size:1.5rem;display:block;position:fixed}

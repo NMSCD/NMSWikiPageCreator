@@ -1,0 +1,1 @@
+"use strict";import{G as a}from"./links-LgOPrxk_.js";function n(t){const e=t.value,o=t.dataset.destNoauto;a(e.replaceAll("-","/"),o)}function s(t){const e=new Date().getFullYear();a(e.toString(),t)}export{s as g,n as p};
