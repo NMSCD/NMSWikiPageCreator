@@ -28,7 +28,7 @@
     "vitest": "^3.2.4",
     "vue": "^3.5.18",
     "vue-tsc": "^3.0.5",
-    "webdriverio": "^9.19.0"
+    "webdriverio": "^9.19.1"
   },
   "dependencies": {
     "@suadelabs/vue3-multiselect": "^1.0.2",
