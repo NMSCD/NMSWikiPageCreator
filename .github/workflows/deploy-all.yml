@@ -13,13 +13,6 @@ concurrency:
   group: 'build-deploy'
   cancel-in-progress: true
 
-# You should only need to touch these two variables
-env:
-  buildCommand: |
-    npm ci
-    npm run build
-  buildOutput: dist # optionally "dist" if build step is needed
-
 jobs:
   build-main:
     runs-on: ubuntu-latest
@@ -29,42 +22,17 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Build App
-        run: ${{ env.buildCommand }}
+        run: |
+          npm ci
+          npm run build
 
       - name: Minify Code
         uses: Muhaddil/minify-js@main
         with:
-          directory: ${{ env.buildOutput }}
+          directory: dist
           overwrite: true
         env:
           DRY_RUN: "false"
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: main
-          path: ${{ env.buildOutput }}
-
-  deploy:
-    runs-on: ubuntu-latest
-    if: ${{ !cancelled() && !failure() }}
-    needs: ['build-main']
-
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v5
-
-      - name: Download App
-        uses: actions/download-artifact@v5
-        with:
-          path: dist/pr
-
-      - name: Move Main Deployment
-        run: |
-          cd dist
-          cp -r pr/main/* .
-          rm -rf pr/main
-          touch .nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
