@@ -1,0 +1,11 @@
+"use strict";import{D as n,a4 as y,C as l,K as s,S as g,G as i,J as m,T as o,U as w,X as I,P as x}from"./links-f23rfWqw.js";import{c as u,a as h,b as v,d as S}from"./startup-MZTHOO7z.js";import"./gallery-Cey1XwYv.js";import"./runtime-dom.esm-bundler-BCJntOSV.js";import"./Explanation.vue_vue_type_script_setup_true_lang-DGxAgSSW.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";function c(){const a=n.planet,e=n.moon;if(!a){n.name="";return}const t=e||a;i(t,"bodyName"),n.name=`Immortal Worm ${t}`}function p(){const a=(()=>{const f=l.input.autoSpawn;for(const r of Array.from(f))if(r.checked)return r.value;return""})(),e=`This creature ${a} automatically spawn on game reload`,t=l.output.autoSpawn;t.style.display=a?"":"none",a&&(t.innerText=e),s()}function d(){const a=g(),e="Eisvana Rare Fauna Album",t=`[[${e}]]${a}`;i(t,"addInfo"),s(),n.catalogue=e}function b(){return n.catalogue.split("|").at(-1)}function P(){y();const{name:a,wormclass:e}=n;return`${a}|${e==="Unstoppable Nematode"?"Unstopp. Nematode":e}`}function $(){const{wormmaxdepth:a,wormstomach:e}=n;return`(${a}ku)<br>${e==="Consumed waypoints"?"Stom.":"Stomach"}: ${e}`}function E(){return n.catalogue.split("|")[0]}function T(){const a=["","Worm scan","Moon Page","Planet Page","System Page","Galaxy Map"];if(!n.moon){const e=a.findIndex(t=>t.toLowerCase().includes("moon"));a.splice(e,1)}n.galleryArray=a}const G=[{element:["planetInput","moonInput"],func:()=>{c(),m(void 0,void 0,!0),u()}},{element:"autoSpawn",func:()=>p()},{element:"researchTeam",func:()=>d()},{element:"wormclassInput",func:()=>u()},{element:["wormmaxdepthInput","wormstomachInput"],func:()=>h()},{element:["discoveredInput","discoveredlinkInput"],func:()=>v()}],N={input:{autoSpawn:"autoSpawnInput"}};o.generateGalleryArray=()=>T(),o.albumLinkGen=()=>E(),o.albumOtherExternal=()=>$(),o.albumNameExternal=()=>P(),o.albumItemTypeExternal=()=>b(),w("galleryExplanationExternal",`
+	The preferred order of pictures is as follows:
+	<div class='dialog-center'>
+		<ol class='dialog-list'>
+			<li>Worm scan</li>
+			<li>Moon Page</li>
+			<li>Planet Page</li>
+			<li>System Page</li>
+			<li>Galaxy Map</li>
+		</ol>
+	</div>`),I(N),x(G),c(),m(void 0,void 0,!0),d(),p(),S();
