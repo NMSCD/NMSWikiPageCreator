@@ -62,8 +62,8 @@ jobs:
       - name: Move Main Deployment
         run: |
           cd dist
-          cp -r pr/main/* .
-          rm -rf pr/main
+          cp -r pr/* .
+          rm -rf pr
           touch .nojekyll
 
       - name: Deploy
