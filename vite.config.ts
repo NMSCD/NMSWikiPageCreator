@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'node:url';
 import { defineConfig, loadEnv } from 'vite';
+import { webdriverio } from '@vitest/browser-webdriverio';
 import vue from '@vitejs/plugin-vue';
 
 const env = loadEnv('', process.cwd());
@@ -12,6 +13,7 @@ export default defineConfig({
   test: {
     browser: {
       enabled: true,
+      provider: webdriverio(),
       headless: true,
       instances: [
         {
@@ -26,7 +28,6 @@ export default defineConfig({
       include: ['src/**.{ts,vue}', 'src/**/**.{ts,vue}'],
       exclude: ['src/api/**/**.ts', 'src/**/**.d.ts'],
       clean: true,
-      all: true,
     },
   },
   build: {
