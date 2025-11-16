@@ -1,0 +1,1 @@
+"use strict";import{it as e}from"./portalglyphs-GMhkLqu8.js";function o(t){let a=t.value,n=t.dataset.destNoauto;e(a.replaceAll("-","/"),n)}function l(t){e(new Date().getFullYear().toString(),t)}export{o as n,l as t};
