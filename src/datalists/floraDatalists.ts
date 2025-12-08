@@ -1,7 +1,7 @@
 /**
  * @fileoverview Provides data for flora datalists
  */
-const floraDatalists = {
+export const floraDatalists = {
   floraNotesData: [
     'Mono-Seasonal',
     'Sensitive to Light',
@@ -363,5 +363,3 @@ const floraDatalists = {
     'Salt',
   ],
 };
-
-export default floraDatalists;
