@@ -27,7 +27,7 @@
     "vite": "npm:rolldown-vite@7.2.5",
     "vitest": "^4.0.9",
     "vue": "^3.5.26",
-    "vue-tsc": "^3.1.8"
+    "vue-tsc": "^3.2.1"
   },
   "dependencies": {
     "@suadelabs/vue3-multiselect": "^1.0.2",
