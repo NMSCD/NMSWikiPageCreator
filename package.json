@@ -22,7 +22,7 @@
     "happy-dom": "^20.4.0",
     "pinia": "^3.0.4",
     "prettier": "^3.8.1",
-    "sass": "^1.97.2",
+    "sass": "^1.97.3",
     "typescript": "^5.9.3",
     "vite": "npm:rolldown-vite@7.2.5",
     "vitest": "^4.0.9",
