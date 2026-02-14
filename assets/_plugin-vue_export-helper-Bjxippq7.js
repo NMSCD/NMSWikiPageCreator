@@ -1,1 +1,1 @@
-"use strict";var c=(r,e)=>{let t=r.__vccOpts||r;for(let[o,a]of e)t[o]=a;return t};export{c as t};
+var e=(e,t)=>{let r=e.__vccOpts||e;for(let[e,o]of t)r[e]=o;return r};export{e as t};
