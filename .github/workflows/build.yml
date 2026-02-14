@@ -10,11 +10,11 @@ permissions:
   contents: write
 
 concurrency:
-  group: 'build-deploy'
+  group: 'build'
   cancel-in-progress: true
 
 jobs:
-  build-main:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,16 +25,16 @@ jobs:
         run: |
           npm ci
           npm run build
+          cd dist
+          touch .nojekyll
 
       - name: Minify Code
-        uses: Muhaddil/minify-js@main
+        uses: Lenni009/minify-js@main
         with:
           directory: dist
           overwrite: true
-        env:
-          DRY_RUN: "false"
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist
+          folder: dist # The folder the action should deploy.
