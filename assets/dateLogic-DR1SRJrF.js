@@ -1,0 +1,1 @@
+import{it as e}from"./portalglyphs-BiLNd0o4.js";function t(t){let a=t.value,o=t.dataset.destNoauto;e(a.replaceAll("-","/"),o)}function n(t){e((new Date).getFullYear().toString(),t)}export{t as n,n as t};
