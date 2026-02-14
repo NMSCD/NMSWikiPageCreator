@@ -1,15 +1,25 @@
 {
   "name": "nms-wiki-page-creator",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "format": "prettier --write src/",
+    "format": "oxfmt",
+    "lint": "oxfmt",
+    "lint:fix": "oxlint --fix",
+    "lint:ci": "oxlint --deny-warnings",
     "test": "vitest",
-    "test-ci": "vitest run"
+    "test:ci": "vitest run"
+  },
+  "dependencies": {
+    "@suadelabs/vue3-multiselect": "^1.0.2",
+    "bulma": "^0.9.4",
+    "md5-hex": "^5.0.0",
+    "parse-mediawiki-template": "^0.2.2",
+    "sortablejs": "^1.15.6"
   },
   "devDependencies": {
     "@types/node": "^25.2.2",
@@ -20,21 +30,15 @@
     "@vue/test-utils": "^2.4.6",
     "@vueuse/core": "^14.2.0",
     "happy-dom": "^20.5.3",
+    "oxfmt": "^0.32.0",
+    "oxlint": "^1.47.0",
     "pinia": "^3.0.4",
-    "prettier": "^3.8.1",
     "sass": "^1.97.3",
     "typescript": "^5.9.3",
     "vite": "npm:rolldown-vite@7.2.5",
     "vitest": "^4.0.9",
     "vue": "^3.5.27",
     "vue-tsc": "^3.2.4"
-  },
-  "dependencies": {
-    "@suadelabs/vue3-multiselect": "^1.0.2",
-    "bulma": "^0.9.4",
-    "md5-hex": "^5.0.0",
-    "parse-mediawiki-template": "^0.2.2",
-    "sortablejs": "^1.15.6"
   },
   "overrides": {
     "vite": "npm:rolldown-vite@7.2.5"
