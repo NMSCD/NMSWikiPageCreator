@@ -31,7 +31,7 @@
     "@vueuse/core": "^14.3.0",
     "happy-dom": "^20.9.0",
     "oxfmt": "^0.47.0",
-    "oxlint": "^1.60.0",
+    "oxlint": "^1.65.0",
     "pinia": "^3.0.4",
     "sass": "^1.99.0",
     "typescript": "^5.9.3",
