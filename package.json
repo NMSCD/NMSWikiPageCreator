@@ -25,8 +25,8 @@
     "@types/node": "^26.2.0",
     "@types/sortablejs": "^1.15.9",
     "@vitejs/plugin-vue": "^6.0.8",
-    "@vitest/browser-webdriverio": "^4.1.11",
-    "@vitest/coverage-v8": "^4.1.2",
+    "@vitest/browser-webdriverio": "^5.0.0",
+    "@vitest/coverage-v8": "^5.0.0",
     "@vue/test-utils": "^2.5.0",
     "@vueuse/core": "^14.4.0",
     "happy-dom": "^20.14.0",
@@ -36,7 +36,7 @@
     "sass": "^1.102.0",
     "typescript": "^5.9.3",
     "vite": "8.2.2",
-    "vitest": "^4.1.0",
+    "vitest": "^5.0.0",
     "vue": "^3.5.41",
     "vue-tsc": "^3.3.10"
   }
